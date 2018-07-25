@@ -196,7 +196,9 @@ def commit_all_changes(message, title):
 #------------------------------------------------------------------------------
 def files_changed():
     out = run_cmd('git status .').decode('utf-8')
-    return 'nothing to commit, working directory clean' not in out.lower()
+    return ('nothing to commit, working directory clean' not in out.lower()
+            and
+            'nothing to commit, working tree clean' not in out.lower())
 
 #------------------------------------------------------------------------------
 # Download the sharelatex project and extract it. Die out if there's any
