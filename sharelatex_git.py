@@ -146,7 +146,7 @@ def ensure_gitignore_is_fine():
                 if s not in lines:
                     f.write(s + '\n')
 
-            write_if_not_there('sharelatex-git.py')
+            write_if_not_there('sharelatex_git.py')
             write_if_not_there('sharelatex-git')
             write_if_not_there('.sharelatex-git')
     except:
@@ -437,4 +437,5 @@ def parse_input():
 #------------------------------------------------------------------------------
 # Go, go, go!
 #------------------------------------------------------------------------------
-go(*parse_input())
+if __name__ == '__main__':
+    go(*parse_input())
